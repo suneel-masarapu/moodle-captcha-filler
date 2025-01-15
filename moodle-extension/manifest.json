@@ -1,0 +1,25 @@
+{
+    "manifest_version" : 3,
+    "name" : "moodle-extension-dev",
+    "version" : "1",
+    "description" : "A moodle extension to fill the captcha",
+    "action" : {
+        "default_icon" : {
+            "16" : "images/favicon.png"
+        }
+    },
+    "permissions" : [
+        "scripting"
+    ],
+    "host_permissions" : [
+        "https://moodle.iitd.ac.in/*"
+    ],
+    "content_scripts" : [
+        {
+        "matches": ["https://moodle.iitd.ac.in/login/index.php"],
+        "js": ["content.js"],
+        "type" : "module"
+        }
+    ]
+
+}
